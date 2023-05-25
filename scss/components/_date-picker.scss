@@ -1,0 +1,66 @@
+//
+// Date / Time Picker
+// based on https://reactdatepicker.com/
+// --------------------------------------------------
+
+
+.react-datepicker {
+  display: flex !important;
+  border: $dropdown-border-width solid $dropdown-border-color !important;
+  @include border-radius($border-radius-lg !important);
+  @include box-shadow($dropdown-box-shadow !important);
+  font-family: $font-family-sans-serif !important;
+}
+
+.react-datepicker__header {
+  background-color: $gray-100 !important;
+  border-bottom-color: $dropdown-border-color !important;
+  @if $enable-rounded {
+    border-top-left-radius: $border-radius-lg !important;
+    &:not(.react-datepicker__header--has-time-select) {
+      border-top-right-radius: $border-radius-lg !important;
+    }
+  }
+  &.react-datepicker__header--time:not(.react-datepicker__header--time--only) {
+    border-top-left-radius: 0 !important;
+  }
+} 
+
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+.react-datepicker__navigation { top: 9px !important; }
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__month-text--keyboard-selected,
+.react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker__year-text--keyboard-selected,
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+  background-color: $primary !important;
+  color: $white !important;
+}
+
+.react-datepicker__day,
+.react-datepicker__month-text,
+.react-datepicker__quarter-text,
+.react-datepicker__year-text,
+.react-datepicker__time-list-item  {
+  &:focus { outline: none; }
+}
+
+.react-datepicker__time-container {
+  border-left-color: darken($dropdown-border-color, 3%) !important;
+}

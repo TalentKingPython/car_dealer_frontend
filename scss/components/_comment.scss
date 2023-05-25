@@ -1,0 +1,26 @@
+//
+// Comment
+// --------------------------------------------------
+
+
+.comment:not(.token) {
+  padding: $spacer * 1.5 0;
+  border-bottom: $border-width solid $border-color;
+
+  // Comment reply
+  .comment:not(.token) {
+    margin: {
+      top: $spacer * 1.5;
+      left: $spacer * 1.5;
+    }
+    padding: {
+      top: 0;
+      bottom: 0;
+      left: $spacer * 1.5;
+    }
+    border: {
+      bottom: 0;
+      left: .25rem solid $border-color;
+    }
+  }
+}

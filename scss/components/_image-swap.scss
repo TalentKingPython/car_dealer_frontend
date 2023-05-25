@@ -1,0 +1,40 @@
+//
+// Image swap utility
+// ----------------------------------------------------------
+
+
+.swap-image {
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+
+  > span:last-child,
+  > span:first-child {
+    display: block;
+    transition: opacity .3s ease-in-out;
+  }
+
+  > span:first-child {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    opacity: 0 !important;
+    z-index: 0 !important;
+  }
+
+  &:hover, &.active {
+    > span:last-child { opacity: 0 !important; }
+    > span:first-child { opacity: 1 !important; }
+  }
+}
+
+
+// Inside card
+
+.card:hover > .swap-image,
+.card.card-active > .swap-image {
+  > span:last-child,
+  > span:first-child { transition-duration: .25s; }
+  > span:last-child { opacity: 0 !important; }
+  > span:first-child { opacity: 1 !important; }
+}
